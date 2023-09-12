@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Everything you need to make a static site engine in one binary.">
+        <meta name="author" content="Vincent Prouillet">
+        <title>feather | Zola </title>
+        <link rel="stylesheet" href="https://www.getzola.org/site.css"/>
+        <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <nav class="">
+                <a class="header__logo white" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;">Zola</a>
+                <a class="white" href="https://www.getzola.org/documentation/" class="nav-link">Docs</a>
+                <a class="white" href="https://www.getzola.org/themes/" class="nav-link">Themes</a>
+                <a class="white" href="https://zola.discourse.group/" class="nav-link">Forum</a>
+                <a class="white" href="https://github.com/getzola/zola" class="nav-link">GitHub</a>
+
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search the docs">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;feather&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>feather</h1>
+            <p>A modern blog theme</p>
+            <p><b>Author:</b> doomy</p>
+            <p><b>License:</b> MIT</p>
+            <p><b>Homepage:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather">https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather</a></p>
+            
+              <p><b>Live Demo:</b> <a href="https:&#x2F;&#x2F;vaporsoft.net&#x2F;">https:&#x2F;&#x2F;vaporsoft.net&#x2F;</a></p>
+            
+            <p><b>Last updated:</b> 2023-08-20T14:37:38+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="feather">feather</h1>
+<p>A lightweight theme for zola </p>
+<p>Feather is a blog theme specifically designed for the static site generator <a href="https://www.getzola.org/">Zola</a>.  It's as far as 
+I know the first theme for the platform that isn't a port or just contained within template files.</p>
+<p>Feather is <em>not</em> intended for anything other than blogs.</p>
+<h1 id="developing-contributing">Developing &amp; Contributing</h1>
+<p>Because feather comes with example content, you can run the theme just like any Gutenberg
+blog with <code>zola serve</code>.  Your changes will autoreload!</p>
+<h2 id="considerations">Considerations</h2>
+<p>Please don't edit the <code>content</code> folder directly for your own blog, use it as a theme like
+intended!</p>
+<h1 id="usage">Usage</h1>
+<p>Using feather is easy.  Install <a href="https://www.getzola.org/">Zola</a> and follow 
+<a href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the guide for creating a site and using a theme</a>.  Then,
+add <code>theme = &quot;feather&quot;</code> to your <code>config.toml</code> file.</p>
+<p>If you intend to publish your site to Github Pages, please check out <a href="http://vaporsoft.net/publishing-gutenberg-to-github/">this tutorial</a>.</p>
+<h2 id="options">Options</h2>
+<p>Zola allows themes to <a href="https://www.getzola.org/documentation/getting-started/configuration/">define <code>[extra]</code> variables</a>
+in the config.  Here's a full list of theme variables with example values and comments.</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>[extra]
+</span><span># specify an image for the big header at the top of the page.
+</span><span># this will be a background cover image, so make it large enough
+</span><span># so that it won&#39;t upscale enough to pixelate
+</span><span>feather_header_image = &quot;/theme_images/default.gif&quot;
+</span><span>
+</span><span># if you want comments, add your disqus embed code here.  
+</span><span># you can obtain a code on the disqus website.
+</span><span>feather_disqus_code = &quot;&lt;div id=&#39;disqus_thread&#39;&gt;&lt;/div&gt;&lt;script&gt; var disqus_config = ... etc ... etc ...&quot;
+</span><span>
+</span><span># if you&#39;d like people to be able to donate to you, you can include a donate link
+</span><span># to be displayed in the footer of the website.
+</span><span>feather_donate_link = &quot;https://paypal.me/piedoomy&quot;
+</span><span>
+</span><span># if you want analytics, add your tracking code HTML here.
+</span><span>feather_analytics = &quot;&lt;script async src=&#39;https://www.googletagmanager.com/gtag/... etc ... etc ...&quot;
+</span></code></pre>
+<h2 id="features">Features</h2>
+<p>Feather also provides several features optional.</p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Categories page</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Tags page</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Sorting chronologically </li>
+<li><input disabled="" type="checkbox" checked=""/>
+Comments</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Analytics </li>
+<li><input disabled="" type="checkbox" checked=""/>
+Donate links</li>
+</ul>
+<h2 id="using-categories-and-tags">Using Categories and Tags</h2>
+<p>In order to use categories and tags, you'll need to enable their compilation by adding the following lines to your <code>config.toml</code>
+(make sure they aren't under <code>[extra]</code>):</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">generate_categories_pages </span><span>= </span><span style="color:#6e9cbe;">true
+</span><span style="color:#e8bf6a;">generate_tags_pages </span><span>= </span><span style="color:#6e9cbe;">true
+</span></code></pre>
+<h1 id="live-demo">Live demo</h1>
+<p><a href="http://vaporsoft.net/">My dev site</a> uses the latest version of feather.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2023 — <a class="white" href="https://vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">contributors</a>
+        </footer>
+
+        <script type="text/javascript" src="https://www.getzola.org/elasticlunr.min.js"></script>
+        <script type="text/javascript" src="https://www.getzola.org/search.js"></script>
+    </body>
+</html>

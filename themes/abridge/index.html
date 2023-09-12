@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Everything you need to make a static site engine in one binary.">
+        <meta name="author" content="Vincent Prouillet">
+        <title>abridge | Zola </title>
+        <link rel="stylesheet" href="https://www.getzola.org/site.css"/>
+        <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <nav class="">
+                <a class="header__logo white" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;">Zola</a>
+                <a class="white" href="https://www.getzola.org/documentation/" class="nav-link">Docs</a>
+                <a class="white" href="https://www.getzola.org/themes/" class="nav-link">Themes</a>
+                <a class="white" href="https://zola.discourse.group/" class="nav-link">Forum</a>
+                <a class="white" href="https://github.com/getzola/zola" class="nav-link">GitHub</a>
+
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search the docs">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;abridge&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>abridge</h1>
+            <p>A fast and lightweight Zola theme using semantic html, a class-light abridge.css, and No mandatory JS.</p>
+            <p><b>Author:</b> Jake G (jieiku)</p>
+            <p><b>License:</b> MIT</p>
+            <p><b>Homepage:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;jieiku&#x2F;abridge">https:&#x2F;&#x2F;github.com&#x2F;jieiku&#x2F;abridge</a></p>
+            
+              <p><b>Live Demo:</b> <a href="https:&#x2F;&#x2F;abridge.netlify.app&#x2F;">https:&#x2F;&#x2F;abridge.netlify.app&#x2F;</a></p>
+            
+            <p><b>Last updated:</b> 2023-08-20T14:37:38+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <div align="center">
+<img src="https://raw.githubusercontent.com/Jieiku/abridge/master/abridge.svg"/>
+<h1 id="abridge-zola-theme">Abridge Zola Theme</h1>
+<p>Abridge is a fast and lightweight Zola theme using semantic html, only ~6kb css before the svg icons and syntax highlighting css, no mandatory JS<a href="https://github.com/Jieiku/abridge#contributing-and-philosophy">*</a>, and perfect <a href="https://pagespeed.web.dev/report?url=abridge.netlify.app">Lighthouse</a>, <a href="https://yellowlab.tools/">YellowLabTools</a>, and <a href="https://observatory.mozilla.org/analyze/abridge.netlify.app">Observatory</a> scores.</p>
+<p>There is also <a href="https://github.com/jieiku/abridge.css">Abridge-minimal</a> Theme which is used to showcase the <a href="https://github.com/Jieiku/abridge.css/tree/master/dist">abridge.css framework</a></p>
+<p>Here is a <a href="https://github.com/Jieiku/zola-themes-benchmarks/blob/main/README.md">Zola Themes Benchmarks</a> Page.</p>
+<p>Maintenance of this project is made possible by all the <a href="https://github.com/Jieiku/abridge/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/Jieiku">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/Jieiku">click here</a>. 💖</p>
+<!-- sponsors --><!-- sponsors -->
+<hr />
+<p><strong><a href="https://abridge.netlify.app/">View demo</a></strong></p>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p>This theme requires version 0.17.3 or later of <a href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a></p>
+<h2 id="quick-start">Quick Start</h2>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git clone https://github.com/jieiku/abridge.git
+</span><span style="color:#da4939;">cd</span><span> abridge
+</span><span>zola serve
+</span><span style="font-style:italic;color:#7c7865;"># open http://127.0.0.1:1111/ in the browser
+</span></code></pre>
+<h2 id="installation">Installation</h2>
+<p>The Quick Start shows how to run the theme directly.
+Next we will use abridge as a theme to a NEW site.</p>
+<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola init mysite
+</span><span style="color:#da4939;">cd</span><span> mysite
+</span></code></pre>
+<h3 id="step-2-install-abridge">Step 2: Install abridge</h3>
+<p>Download this theme to your themes directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git clone https://github.com/jieiku/abridge.git themes/abridge
+</span></code></pre>
+<p>Or install as a submodule:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git init  </span><span style="font-style:italic;color:#7c7865;"># if your project is a git repository already, ignore this command
+</span><span>git submodule add https://github.com/jieiku/abridge.git themes/abridge
+</span></code></pre>
+<h3 id="step-3-configuration">Step 3: Configuration</h3>
+<p>Copy some files from the theme directory to your project's root directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>rsync themes/abridge/config.toml config.toml
+</span><span>rsync themes/abridge/COPY-TO-ROOT-SASS/</span><span style="color:#cc7833;">*</span><span> sass/
+</span><span>rsync themes/abridge/netlify.toml netlify.toml
+</span><span>rsync themes/abridge/package.json package.json
+</span><span>rsync</span><span style="font-style:italic;color:#fd971f;"> -r</span><span> themes/abridge/content/static content/
+</span></code></pre>
+<ul>
+<li><code>config.toml</code> base configuration with all config values</li>
+<li><code>COPY-TO-ROOT-SASS/abridge.scss</code> overrides to customize Abridge variables.</li>
+<li><code>netlify.toml</code> settings to deploy your repo with netlfiy</li>
+<li><code>package.json</code> to switch between nosearch, elasticlunr, tinysearch, stork.</li>
+<li><code>content/static</code> files for generating tinysearch and stork indexes.</li>
+</ul>
+<p>Uncomment the theme line in your project's root config.toml:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^#theme = &quot;abridge&quot;/theme = &quot;abridge&quot;/&#39;</span><span> config.toml
+</span></code></pre>
+<h3 id="step-4-add-new-content">Step 4: Add new content</h3>
+<p>Copy the content from the theme directory to your project or make a new post:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>rsync</span><span style="font-style:italic;color:#fd971f;"> -r</span><span> themes/abridge/content .
+</span></code></pre>
+<h3 id="step-5-run-the-project">Step 5: Run the project</h3>
+<p>Just run <code>zola serve</code> in the root path of the project:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola serve
+</span></code></pre>
+<p>Zola will start the dev web server, accessible by default at <code>http://127.0.0.1:1111</code>.</p>
+<p>Saved changes will live reload in the browser.</p>
+<h2 id="customization">Customization</h2>
+<p>A lot of effort has been made to ensure Abridge features can be easily customized.</p>
+<h3 id="default-theme-for-nojs-noscript-visitors">Default Theme for nojs/noscript visitors.</h3>
+<p>If you have abridge configured to use the switcher mode instead of auto/dark/light, then your site will have a button that allows the visitor to toggle the theme.</p>
+<p>If your visitor uses noscript or some other javascript blocking browser addon, then they will be stuck with whatever the configured default theme is for the switcher mode.</p>
+<p>To adjust this mode you would set the following two config values in abridge.scss <strong>AND</strong> config.toml:</p>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span>$switcherDefault: </span><span style="color:#c1be91;">&quot;dark&quot;</span><span>,</span><span style="color:#95815e;">// default nojs switcher mode: dark, light (make sure to also set js_switcher_default in config.toml)
+</span></code></pre>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">js_switcher_default </span><span>= </span><span style="color:#c1be91;">&quot;dark&quot; </span><span style="color:#95815e;"># default nojs switcher mode: dark, light (make sure to also set $switcherDefault in abridge.scss)
+</span></code></pre>
+<p>By default abridge uses dark mode for the switcher, so unless you want to set the default mode to light for nojs visitors, then you do not need to worry about these settings.</p>
+<h3 id="number-of-items-per-page-for-pagination">Number of Items per page for pagination</h3>
+<p>To change the number of items per page edit: <code>content/_index.md</code> and change the value for <code>paginate_by</code></p>
+<h2 id="sass-overrides">Sass Overrides</h2>
+<p>Abridge SASS variables can be overrided by editing <code>sass\abridge.scss</code> file in your project's root sass folder.</p>
+<h3 id="page-width">Page Width:</h3>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span>$mw:</span><span style="color:#a5c261;">75</span><span style="color:#cc7833;">%</span><span>,</span><span style="color:#95815e;">// max-width
+</span></code></pre>
+<h3 id="abridge-theme-modes">Abridge Theme Modes</h3>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span>$abridgeMode: </span><span style="color:#c1be91;">&quot;switcher&quot;</span><span>,</span><span style="color:#95815e;">//valid values: switcher, auto, dark, light
+</span></code></pre>
+<ul>
+<li>Switcher automatically displays a dark or light version depending on browser/OS settings, and has a javascript user clickable theme switcher.</li>
+<li>Auto automatically displays a dark or light version depending on browser/OS settings.</li>
+<li>Dark is the dark theme always.</li>
+<li>Light is the light theme always.</li>
+</ul>
+<h3 id="colors-and-styles">Colors and Styles</h3>
+<p>You can specify which color template you want to use as a base:</p>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span>$color: </span><span style="color:#c1be91;">&quot;orange&quot;</span><span>,</span><span style="color:#95815e;">// color template to use/override: orange, blue, blueshade
+</span></code></pre>
+<p>Then override individual colors as needed:</p>
+<pre data-lang="scss" style="background-color:#383838;color:#e6e1dc;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="color:#95815e;">/// Dark Colors
+</span><span>$f1d: </span><span style="color:#6d9cbe;">#ccc</span><span>,</span><span style="color:#95815e;">// Font Color Primary
+</span><span style="color:#d0d0ff;">$f2d</span><span>: </span><span style="color:#6d9cbe;">#ddd</span><span>,</span><span style="color:#95815e;">// Font Color Headers
+</span><span style="color:#d0d0ff;">$c1d</span><span>: </span><span style="color:#6d9cbe;">#111</span><span>,</span><span style="color:#95815e;">// Background Color Primary
+</span><span style="color:#d0d0ff;">$c2d</span><span>: </span><span style="color:#6d9cbe;">#222</span><span>,</span><span style="color:#95815e;">// Background Color Secondary
+</span><span>...
+</span></code></pre>
+<h3 id="footer-social-icons">Footer Social Icons</h3>
+<p>You should configure which social icons you plan to use. (makes the css file size smaller)</p>
+<p>To simply turn them all off you can set <code>$enable-icons: false</code></p>
+<p>Otherwise enable only the icons you need, eg for mail you would set <code>$icon-mail: true</code></p>
+<p>You should then disable all the icons that you do not use.</p>
+<h2 id="config-toml-configuration">Config.toml Configuration</h2>
+<p>Most Options in config.toml are self documenting. (obvious between name of config value and comments)</p>
+<p>Abridge will work with a barebones config.toml because default values are provided in the template files.</p>
+<p>I recommend copying the entire config.toml file as outlined in Step 3 as it provides all configurable values.</p>
+<h3 id="top-and-footer-menus">Top and Footer menus</h3>
+<p>Set a field in <code>extra</code> with a key of <code>menu</code> and <code>menu_footer</code>.
+If you want the link to open in a new tab/browser then set <code>blank = true</code>.
+If a link should have a trailing slash at the end of the url set <code>slash = true</code>.
+(generally all links should have a trailing slash unless its a file link such as sitemap.xml)</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">menu </span><span>= [
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;about&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;About&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;posts&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Posts&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;categories&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Categories&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;tags&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Tags&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>]
+</span><span style="color:#e8bf6a;">menu_footer </span><span>= [
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;about&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;About&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;contact&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Contact&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;privacy&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Privacy&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">true</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">false</span><span>},
+</span><span>  {</span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;sitemap.xml&quot;</span><span>, </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;Sitemap&quot;</span><span>, </span><span style="color:#e8bf6a;">slash </span><span>= </span><span style="color:#6e9cbe;">false</span><span>, </span><span style="color:#e8bf6a;">blank </span><span>= </span><span style="color:#6e9cbe;">true</span><span>},
+</span><span>]
+</span></code></pre>
+<h3 id="seo-and-header-tags">SEO and Header Tags</h3>
+<p>You can review the SEO tags in the head macro located at <code>templates/macros/head.html</code>, all configurable values should be in config.toml under config.extra or in the content markdown files.</p>
+<p>In your post markdown file you should set a title less than 60 characters and a description between 80 and 160 characters in length. The description is what is displayed in search results below the page title. Anywhere that you do not set a page description, the primary site config.description will be used instead.</p>
+<p>You should also set page specific keywords unless your keywords defined in config.toml suffice, any keywords that you add to the page are in addition to the ones defined in config.toml, so do not add those same keywords to your page keywords.</p>
+<p>You can optionally also set a page specific image for search results by using page.extra.thumbnail. OpenGraph recommends 1200 x 630 (1.9:1). Twitter recommends 2:1 for large and 1:1 for small. If you do not set a page specific thumbnail then the banner defined in config.toml will be used instead.</p>
+<p>Refer to <a href="https://raw.githubusercontent.com/Jieiku/abridge/master/content/overview-images/index.md">overview-images</a> for an example:</p>
+<pre data-lang="md" style="background-color:#383838;color:#e6e1dc;" class="language-md "><code class="language-md" data-lang="md"><span>+++
+</span><span>title = &quot;Image Shortcodes&quot;
+</span><span>description = &quot;Images can be embedded directly using markdown </span><span style="color:#ec3533;">`![Ferris](ferris.svg)`</span><span>, but using a shortcode prevents CLS by explicitly setting the width and height.&quot;
+</span><span>date = 2021-05-19
+</span><span>
+</span><span>[taxonomies]
+</span><span>categories = [&quot;Features&quot;]
+</span><span>tags = [&quot;shortcodes&quot;,&quot;images&quot;]
+</span><span>[extra]
+</span><span>toc = true
+</span><span>keywords = &quot;Image, Markdown, Shortcodes, Hover&quot;
+</span><span>thumbnail = &quot;ferris-gesture.png&quot;
+</span><span>+++
+</span></code></pre>
+<h3 id="katex-math-notation">KaTeX Math Notation</h3>
+<p>KaTeX can be used to display complex mathematics, it is a &quot;Fast math typesetting for the web.&quot;</p>
+<p>You can see a demo on <a href="https://abridge.netlify.app/overview-math/">this page</a>.</p>
+<p>For better performance I recommend only enabling math on a <a href="https://github.com/Jieiku/abridge/blob/master/content/overview-math.md?plain=1#L11-L13">per page bases in your post.md files</a>, instead of in your main config.toml file.</p>
+<h3 id="pwa-progressive-web-application">PWA (Progressive Web Application)</h3>
+<p>Abridge theme has PWA support. You can install the entire site as an app and have it work offline. To try it out simply use google chrome or your phone and go here: https://abridge.netlify.app/</p>
+<p>If using chrome on desktop then look at the end of the address bar for the install button. On android you should get a popup to install, you can also install from the 3 dot menu in the top right corner. Once you have the PWA installed, you can go completely offline and you will still be able to browse or search the site!</p>
+<p>To use it in your own instance you will need to edit <code>static/sw.js</code> for the list of files to cache. Technically you do not need to edit <code>sw.js</code>, but if even a single file in the cache list is missing then it wont pre cache the list, so it will only cache as you browse.</p>
+<p>There is an npm script to generate the file cache list and minification <code>npm run pwa</code>. My <code>netlify.toml</code> file automatically runs this npm script during site deployment, so everything is automatic. If Zola was able to template a js file then it might be possible to generate the list of cache files dynamically at build.</p>
+<p>The PWA feature is also easy to disable by simply setting <code>pwa = false</code> in <code>config.toml</code></p>
+<h2 id="javascript-files">Javascript files</h2>
+<p>These are the javascript files currently used by Abridge:</p>
+<ul>
+<li>search_index.en.js: search index generated by zola at each build for elasticlunr.</li>
+<li>elasticlunr.min.js: search library for client side searching.</li>
+<li>search.js: to make use of elasticlunr from our sites search box for both suggestions and the results page.</li>
+<li>email.js: uses javascript to obfuscate your real email address for the mail icon at the bottom of the page.</li>
+<li>codecopy.js: add a Copy Button to code blocks, to copy contents of the code block to clipboard.</li>
+<li>theme.js: tiny script to facilitate local storage for the theme switcher. (never bundle, always separate)</li>
+<li>theme_button.js: tiny script for the theme switcher function when you click the theme switch button.</li>
+<li>prestyle.js: Used to preload css files <code>&lt;link rel=&quot;preload&quot;</code> - this script changes these to <code>&lt;link rel=&quot;stylesheet&quot;</code> once the page has finished loading, this allows us to load stylesheets for external fonts, fontawesome, or katex in a non blocking fashion.</li>
+<li>sw.js: this is the Service Worker file for the PWA.</li>
+<li>sw_load.js: this file handles loading the Service Worker for the PWA.</li>
+</ul>
+<h3 id="js-bundle-option">js_bundle option</h3>
+<p><code>js_bundle</code> when set to true serves a bundle file instead of all of the individual js files.</p>
+<p>All Bundles are defined in <a href="https://github.com/Jieiku/abridge/blob/master/package.json">package.json</a></p>
+<p>A Bundle can be generated from the package.json scripts using npm:</p>
+<ul>
+<li><code>npm run abridge-bundle-nosearch</code> - generates a bundle without search.</li>
+<li><code>npm run abridge-bundle-elasticlunr</code> - generates a bundle of all js with elasticlunr.</li>
+<li><code>npm run abridge-bundle-tinysearch</code> - generates a bundle of all js with tinysearch.</li>
+<li><code>npm run abridge-bundle-stork</code> - generates a bundle of all js with stork.</li>
+</ul>
+<h2 id="switch-search-library">Switch Search Library</h2>
+<p>In addition to elasticlunr abridge also supports tinysearch and stork.</p>
+<p>tinysearch demo: https://jieiku.github.io/abridge-tinysearch/</p>
+<p>stork demo: https://jieiku.github.io/abridge-stork/</p>
+<p>To use tinysearch/stork extra steps are required.</p>
+<p><strong>Switch to tinysearch:</strong></p>
+<p>First you have to install tinysearch so that you can build the index:</p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>git clone https://github.com/tinysearch/tinysearch
+</span><span>cd tinysearch
+</span><span>cargo build --release
+</span><span>sudo cp ./target/release/tinysearch /usr/local/bin/tinysearch
+</span><span>exit # reload shell environment
+</span></code></pre>
+<p>Switch abridge to tinysearch:</p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>npm run tinysearch
+</span><span>zola build
+</span><span>tinysearch --optimize --path static public/data_tinysearch/index.html
+</span><span># zola serve
+</span></code></pre>
+<p><strong>Switch to stork:</strong></p>
+<p>First you have to install stork so that you can build the index:</p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>git clone https://github.com/jameslittle230/stork
+</span><span>cd stork
+</span><span>cargo build --release
+</span><span>sudo cp ./target/release/stork /usr/local/bin/stork
+</span><span>exit # reload shell environment
+</span></code></pre>
+<p>Switch abridge to stork:</p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>npm run stork
+</span><span>zola build
+</span><span>stork build --input public/data_stork/index.html --output static/stork.st
+</span><span># zola serve
+</span></code></pre>
+<p><strong>Switch to elasticlunr:</strong></p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>npm run elasticlunr
+</span></code></pre>
+<p><strong>Switch to nosearch:</strong></p>
+<pre data-lang="shell" style="background-color:#383838;color:#e6e1dc;" class="language-shell "><code class="language-shell" data-lang="shell"><span>npm run nosearch
+</span></code></pre>
+<h2 id="optional-performance-optimizations">Optional Performance Optimizations:</h2>
+<h3 id="theme-switcher">Theme-Switcher</h3>
+<p>The theme switcher relies on javascript to work, it applies the .light class to the root documentElement. The file that handles this (theme.js) is tiny and optimized and it is the first file loaded in the head, so the performance hit is minimal. Without the Theme switcher you can still use The automatic Theme which uses the Browser/OS preference settings. You can even install a <a href="https://addons.mozilla.org/en-US/firefox/addon/theme-switcher-for-firefox/">Firefox plugin</a> to quickly switch between the two.</p>
+<h3 id="optimize-png-ico-files">Optimize PNG/ICO files:</h3>
+<p>All png files can be optimized using <a href="https://github.com/shssoichiro/oxipng">oxipng</a>:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> static
+</span><span>oxipng</span><span style="font-style:italic;color:#fd971f;"> -o</span><span> max</span><span style="font-style:italic;color:#fd971f;"> --strip</span><span> all</span><span style="font-style:italic;color:#fd971f;"> -a -Z </span><span style="color:#cc7833;">*</span><span>.png
+</span></code></pre>
+<p>leanify can compress farther for both png and ico files:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>git clone https://github.com/JayXon/Leanify
+</span><span style="color:#da4939;">cd</span><span> Leanify
+</span><span>make
+</span><span>sudo cp leanify /usr/local/bin/leanify
+</span><span style="color:#da4939;">exit  </span><span style="font-style:italic;color:#7c7865;">#launch new terminal
+</span><span>leanify</span><span style="font-style:italic;color:#fd971f;"> -i</span><span> 7777 </span><span style="color:#cc7833;">*</span><span>.png
+</span><span>leanify</span><span style="font-style:italic;color:#fd971f;"> -i</span><span> 7777 </span><span style="color:#cc7833;">*</span><span>.ico
+</span></code></pre>
+<p>With larger displays and greater pixel density becoming common it is probably a good idea to use atleast a littly bit of lossy compression. For example you can use pngquant with a 93% quality and you will often get images around 1/2 the size. Understand that pngquant is cumulative, so you should keep your original images somewhere, and only ever use pngquant once per image, if you use it again and again on the same image then you will lower the image quality each time. Always use oxipng afterwards, oxipng is lossless.</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>pngquant</span><span style="font-style:italic;color:#fd971f;"> --skip-if-larger --strip --quality</span><span style="color:#cc7833;">=</span><span>93-93</span><span style="font-style:italic;color:#fd971f;"> --speed</span><span> 1 </span><span style="color:#cc7833;">*</span><span>.png
+</span><span>oxipng</span><span style="font-style:italic;color:#fd971f;"> -o</span><span> max</span><span style="font-style:italic;color:#fd971f;"> --strip</span><span> all</span><span style="font-style:italic;color:#fd971f;"> -a -Z </span><span style="color:#cc7833;">*</span><span>.png
+</span></code></pre>
+<h3 id="pre-gzip-brotli-content-to-serve-with-nginx">Pre gzip/brotli content to serve with nginx:</h3>
+<p>If you are serving your site with nginx, you can pre gzip your content.</p>
+<p>First configure nginx:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>sudo nano /etc/nginx/nginx.conf
+</span><span>
+</span><span>gzip on</span><span style="color:#cc7833;">;
+</span><span>gzip_vary on</span><span style="color:#cc7833;">;
+</span><span>gzip_proxied expired no-cache no-store private auth</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_proxied any;
+</span><span>gzip_comp_level 9</span><span style="color:#cc7833;">;
+</span><span>gzip_buffers 64 16k</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_buffers 16 8k;
+</span><span>gzip_http_version 1.1</span><span style="color:#cc7833;">;
+</span><span>gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml application/xhtml+xml application/x-javascript application/x-font-ttf application/vnd.ms-fontobject font/opentype font/ttf font/eot font/otf</span><span style="color:#cc7833;">;
+</span><span style="font-style:italic;color:#7c7865;">#gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+</span></code></pre>
+<p>Then you can gzip/brotli your files:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>zola build
+</span><span>find </span><span style="color:#d0d0ff;">~</span><span>/.dev/abridge/public</span><span style="font-style:italic;color:#fd971f;"> -type</span><span> f</span><span style="font-style:italic;color:#fd971f;"> -regextype</span><span> posix-extended</span><span style="font-style:italic;color:#fd971f;"> -regex </span><span style="color:#a5c261;">&#39;.*\.(htm|html|css|js|xml|xsl|txt|woff|woff2|svg|otf|eot|ttf)&#39;</span><span style="font-style:italic;color:#fd971f;"> -exec</span><span> gzip</span><span style="font-style:italic;color:#fd971f;"> --best -k -f </span><span>{} </span><span style="color:#519f50;">\+</span><span style="font-style:italic;color:#fd971f;"> -exec</span><span> brotli</span><span style="font-style:italic;color:#fd971f;"> --best -f </span><span>{} </span><span style="color:#519f50;">\;
+</span><span>rsync</span><span style="font-style:italic;color:#fd971f;"> -zvrh </span><span style="color:#d0d0ff;">~</span><span>/.dev/abridge/public/ web:/var/www/abridge
+</span></code></pre>
+<p>Nginx does not come by default with brotli support, but adding it was not difficult.</p>
+<p>(Netlify brotli gzips your files automatically, no exta work required.)</p>
+<h2 id="contributing-and-philosophy">Contributing and Philosophy</h2>
+<p>We'd love your help! Especially with fixes to issues, or improvements to existing features.</p>
+<p>The goal is for abridge to be lightweight, fast, and to work properly even if javascript is disabled or blocked.</p>
+<p>The only feature that may be considered a necessity that relies on javascript is the Search.</p>
+<h2 id="license">License</h2>
+<p><strong>abridge</strong> is distributed under the terms of the <a href="https://github.com/jieiku/abridge/blob/master/LICENSE">MIT license</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2023 — <a class="white" href="https://vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">contributors</a>
+        </footer>
+
+        <script type="text/javascript" src="https://www.getzola.org/elasticlunr.min.js"></script>
+        <script type="text/javascript" src="https://www.getzola.org/search.js"></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Everything you need to make a static site engine in one binary.">
+        <meta name="author" content="Vincent Prouillet">
+        <title>anemone | Zola </title>
+        <link rel="stylesheet" href="https://www.getzola.org/site.css"/>
+        <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <nav class="">
+                <a class="header__logo white" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;">Zola</a>
+                <a class="white" href="https://www.getzola.org/documentation/" class="nav-link">Docs</a>
+                <a class="white" href="https://www.getzola.org/themes/" class="nav-link">Themes</a>
+                <a class="white" href="https://zola.discourse.group/" class="nav-link">Forum</a>
+                <a class="white" href="https://github.com/getzola/zola" class="nav-link">GitHub</a>
+
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search the docs">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;anemone&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>anemone</h1>
+            <p>Nearly no-Javascript, efficient, minimal theme.</p>
+            <p><b>Author:</b> Lyes &#x27;Speyll&#x27;</p>
+            <p><b>License:</b> MIT</p>
+            <p><b>Homepage:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;Speyll&#x2F;anemone">https:&#x2F;&#x2F;github.com&#x2F;Speyll&#x2F;anemone</a></p>
+            
+              <p><b>Live Demo:</b> <a href="https:&#x2F;&#x2F;anemone.pages.dev">https:&#x2F;&#x2F;anemone.pages.dev</a></p>
+            
+            <p><b>Last updated:</b> 2023-08-20T14:37:38+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="anemone">anemone</h1>
+<p>Nearly no-Javascript, efficient, minimal <a href="https://www.getzola.org">Zola</a> theme.
+I use it on my own <a href="https://speyllsite.pages.dev/">website</a></p>
+<h2 id="light-and-dark-theme">Light and dark theme</h2>
+<p><img src="https://www.getzola.org/themes/anemone/screenshot.png" alt="screenshotLight" /></p>
+<h2 id="installation">Installation</h2>
+<p>First download this theme to your <code>themes</code> directory:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#da4939;">cd</span><span> themes
+</span><span>git clone https://github.com/Speyll/anemone
+</span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#e8bf6a;">theme </span><span>= </span><span style="color:#c1be91;">&quot;anemone&quot;
+</span></code></pre>
+<h2 id="options">Options</h2>
+<h3 id="default-taxonomies">Default taxonomies</h3>
+<p>To use tags, in a page metadata add</p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">taxonomies</span><span>]
+</span><span style="color:#e8bf6a;">tags </span><span>= [ </span><span style="color:#a5c261;">&#39;tag1&#39;</span><span>, </span><span style="color:#a5c261;">&#39;tag2&#39; </span><span>]
+</span></code></pre>
+<h3 id="pages-list-in-homepage">Pages list in homepage</h3>
+<p>To enable listing of pages in homepage add the following in <code>config.toml</code></p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">extra</span><span>]
+</span><span style="color:#e8bf6a;">list_pages </span><span>= </span><span style="color:#6e9cbe;">true
+</span></code></pre>
+<h3 id="header-and-footer-nav-links">Header and footer nav links</h3>
+<p>Also in the <code>extra</code> section in <code>config.toml</code></p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">extra</span><span>]
+</span><span>
+</span><span style="color:#e8bf6a;">header_nav </span><span>= [
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;/home/&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/&quot; </span><span>},
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;/about/&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/about&quot; </span><span>},
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;/journal/&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/journal&quot; </span><span>},
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;/blog/&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;/blog&quot; </span><span>},
+</span><span>]
+</span><span>
+</span><span style="color:#e8bf6a;">footer_nav </span><span>= [
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;&lt; previous&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;#&quot; </span><span>},
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;webring&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;#&quot; </span><span>},
+</span><span>  { </span><span style="color:#e8bf6a;">name </span><span>= </span><span style="color:#c1be91;">&quot;next &gt;&quot;</span><span>, </span><span style="color:#e8bf6a;">url </span><span>= </span><span style="color:#c1be91;">&quot;#&quot; </span><span>},
+</span><span>]
+</span></code></pre>
+<h3 id="add-toc-to-pages">Add TOC to pages</h3>
+<p>In a page frontmatter, set <code>extra.toc</code> to <code>true</code></p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">extra</span><span>]
+</span><span style="color:#e8bf6a;">toc </span><span>= </span><span style="color:#6e9cbe;">true
+</span></code></pre>
+<h3 id="extra-data">Extra data</h3>
+<ul>
+<li><code>author</code> can be set in both main config and in pages metadata</li>
+<li><code>image</code> variable can be used in pages to add an image to HTML <code>&lt;meta&gt;</code> tags</li>
+<li>Same for <code>favicon</code> in main config, except this one is also used as the site icon</li>
+</ul>
+<h3 id="disable-twitter-card">Disable Twitter card</h3>
+<p>Twitter metatags are generated by default, to disable them set <code>extra.twitter_card</code> to <code>false</code> in in your <code>config.toml</code></p>
+<pre data-lang="toml" style="background-color:#383838;color:#e6e1dc;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[</span><span style="color:#e8bf6a;">extra</span><span>]
+</span><span style="color:#e8bf6a;">twitter_card </span><span>= </span><span style="color:#6e9cbe;">true
+</span></code></pre>
+<h2 id="license">License</h2>
+<p>The theme is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2023 — <a class="white" href="https://vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">contributors</a>
+        </footer>
+
+        <script type="text/javascript" src="https://www.getzola.org/elasticlunr.min.js"></script>
+        <script type="text/javascript" src="https://www.getzola.org/search.js"></script>
+    </body>
+</html>
